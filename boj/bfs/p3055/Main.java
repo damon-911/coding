@@ -16,24 +16,64 @@ public class Main {
     static Queue<Point> queue;
 
     static class Point {
-        int y;
         int x;
+        int y;
         char type;
 
-        public Point(int y, int x, char type) {
-            this.y = y;
+        public Point(int x, int y, char type) {
             this.x = x;
+            this.y = y;
             this.type = type;
         }
+    }
 
-        @Override
-        public String toString() {
-            return "[" +
-                    "y=" + y +
-                    ", x=" + x +
-                    ", type=" + type +
-                    ']';
+    static void bfs() {
+        boolean foundAnswer = false;
+        while (!queue.isEmpty()) {
+            // 1. 큐에서 꺼내옴
+            Point p = queue.poll();
+
+            // 2. 목적지인가? (고슴도치가 D에 도착)
+            if (p.type == 'D') {
+                System.out.println(dp[p.x][p.y]);
+                foundAnswer = true;
+                break;
+            }
+
+            // 3. 연결된 곳을 순회 (상하좌우로 이동)
+            for (int i = 0; i < 4; i++) {
+                int tx = p.x + MX[i];
+                int ty = p.y + MY[i];
+
+                // 4. 갈 수 있는가? (공통 -> 맵 벗어나지 않고)
+                if (0 <= tx && tx < R && 0 <= ty && ty < C) {
+                    if (p.type == '.' || p.type == 'S') {
+                        // 4. 갈 수 있는가? (고슴도치 -> '.', 'D')
+                        if ((map[tx][ty] == '.' || map[tx][ty] == 'D') && dp[tx][ty] == 0) {
+                            // 5. 체크인 (고슴도치 -> dp)
+                            dp[tx][ty] = dp[p.x][p.y] + 1;
+
+                            // 6. 큐에 넣음
+                            queue.add(new Point(tx, ty, map[tx][ty]));
+                        }
+                    }
+                    else if (p.type == '*') {
+                        // 4. 갈 수 있는가? (물 -> '.', 'S')
+                        if (map[tx][ty] == '.' || map[tx][ty] == 'S') {
+                            // 5. 체크인 (물 -> map)
+                            map[tx][ty] = '*';
+
+                            // 6. 큐에 넣음
+                            queue.add(new Point(tx, ty, '*'));
+                        }
+                    }
+                }
+            }
         }
+
+        // 더 이상 갈 수 있는 길이 없으면
+        if (!foundAnswer)
+            System.out.println("KAKTUS");
     }
 
     public static void main(String[] args) throws IOException {
@@ -50,13 +90,13 @@ public class Main {
 
         Point start = null;    // 시작점
         for (int r = 0; r < R; r++) {
-            st = new StringTokenizer(br.readLine());
-            String line = st.nextToken();
+            String line = br.readLine();
             for (int c = 0; c < C; c++) {
                 map[r][c] = line.charAt(c);
 
-                if (map[r][c] == '*')
+                if (map[r][c] == '*') {
                     queue.add(new Point(r, c, '*'));
+                }
                 else if (map[r][c] == 'S') {
                     start = new Point(r, c, 'S');
                 }
@@ -65,50 +105,6 @@ public class Main {
 
         queue.add(start);
 
-        boolean foundAnswer = false;
-        while (!queue.isEmpty()) {
-            // 1. 큐에서 꺼내옴
-            Point p = queue.poll();
-
-            // 2. 목적지인가? (고슴도치가 D에 도착)
-            if (p.type == 'D') {
-                System.out.println(dp[p.y][p.x]);
-                foundAnswer = true;
-                break;
-            }
-
-            // 3. 연결된 곳을 순회 (상하좌우로 이동)
-            for (int i = 0; i < 4; i++) {
-                int ty = p.y + MY[i];
-                int tx = p.x + MX[i];
-
-                // 4. 갈 수 있는가? (공통 -> 맵 벗어나지 않고)
-                if (0 <= ty && ty < R && 0 <= tx && tx < C) {
-                    if (p.type == '.' || p.type == 'S') {
-                        // 4. 갈 수 있는가? (고슴도치 -> '.', 'D')
-                        if ((map[ty][tx] == '.' || map[ty][tx] == 'D') && dp[ty][tx] == 0) {
-                            // 5. 체크인 (고슴도치 -> dp)
-                            dp[ty][tx] = dp[p.y][p.x] + 1;
-
-                            // 6. 큐에 넣음
-                            queue.add(new Point(ty, tx, map[ty][tx]));
-                        }
-                    }
-                    else if (p.type == '*') {
-                        // 4. 갈 수 있는가? (물 -> '.', 'S')
-                        if (map[ty][tx] == '.' || map[ty][tx] == 'S') {
-                            // 5. 체크인 (물 -> map)
-                            map[ty][tx] = '*';
-
-                            // 6. 큐에 넣음
-                            queue.add(new Point(ty, tx, '*'));
-                        }
-                    }
-                }
-            }
-        }
-
-        if (!foundAnswer)
-            System.out.println("KAKTUS");
+        bfs();
     }
 }
