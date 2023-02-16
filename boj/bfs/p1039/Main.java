@@ -8,7 +8,6 @@ import java.util.StringTokenizer;
 public class Main {
 
     static int N, K, M;
-    static int maxNum;
     static int[] visited;
     static Queue<Integer> queue;
 
@@ -69,8 +68,6 @@ public class Main {
         N = Integer.parseInt(st.nextToken());
         M = String.valueOf(N).length();
         K = Integer.parseInt(st.nextToken());
-
-        maxNum = 0;
 
         visited = new int[1000001];
 
