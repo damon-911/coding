@@ -9,7 +9,7 @@ public class Main {
     static int[] nums;
 
     static void find(int num, int start, int end) {
-        // start과 end가 역전되면 존재하지 핞다는 의미이다
+        // start과 end가 역전되면 존재하지 않는다는 의미이다
         if (start > end) {
             System.out.println("0");
             return;

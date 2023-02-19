@@ -22,7 +22,7 @@ public class Main {
 			String str = br.readLine();
 			
 			for (int j = 0; j < str.length(); j++) {
-             	// 자릿수만큼 10의 거듭제곱 더해준다
+             	// 각 자릿수만큼 10의 거듭제곱을 더해준다
 				words[str.charAt(j) - 'A'] += (Math.pow(10, str.length() - j - 1));
 			}
 		}
@@ -31,14 +31,13 @@ public class Main {
 		
 		int answer = 0;
 		int num = 9;
-		
 
 		for (int i = 25; i >= 0; i--) {
 			if (words[i] == 0) {
 				continue;
 			}
 			
-			 // 큰 수부터 9, 8, 7, ... 순서대로 붙여준다
+			// 큰 수부터 9, 8, 7, ... 순서대로 붙여준다
 			answer += (words[i] * num); 
 			num--;
 		}

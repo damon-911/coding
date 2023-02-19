@@ -44,18 +44,18 @@ public class Main {
             int id = Integer.parseInt(st.nextToken());
 
             // 처음으로 추천받은 학생이라면
-            if(students[id] == null) {
+            if (students[id] == null) {
                 students[id] = new Student(id, 0, 0, false);
             }
 
             // 이미 게시되어 있는 경우
-            if(students[id].isIn) {
+            if (students[id].isIn) {
                 students[id].count++;
             }
             // 게시되어 있지 않은 경우
             else {
                 // 게시판이 꽉 찬 경우
-                if (list.size()==N) {
+                if (list.size() == N) {
                     Collections.sort(list);
                     list.get(0).isIn = false;
                     list.remove(0);
@@ -70,8 +70,8 @@ public class Main {
 
         list.sort(new Comparator<Student>() {
             @Override
-            public int compare(Student o1, Student o2) {
-                return o1.id - o2.id;
+            public int compare(Student s1, Student s2) {
+                return s1.id - s2.id;
             }
         });
 
