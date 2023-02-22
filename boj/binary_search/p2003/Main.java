@@ -7,8 +7,27 @@ public class Main {
 
     static int N, M, num;
     static int[] inputs;
-    static int sum, left, right;
-    static Boolean rightFlag;
+
+    static void twoPointer() {
+        int sum = 0;
+        int start = 0;
+        int end = 0;
+
+        while (start < N) {
+            // sum이 M보다 크거나 같고 end가 배열의 끝에 도달했을 경우
+            if (sum >= M || end == N)
+                sum -= inputs[start++];
+            // sum이 M보다 작을 경우
+            else
+                sum += inputs[end++];
+
+            // sum이 M과 같을 경우
+            if (sum == M)
+                num++;
+        }
+
+        System.out.println(num);
+    }
 
     public static void main(String[] args) throws IOException {
         System.setIn(new FileInputStream("boj/binary_search/p2003/input.txt"));
@@ -23,31 +42,8 @@ public class Main {
         for (int i = 0; i < N; i++)
             inputs[i] = Integer.parseInt(st.nextToken());
 
-        sum = 0;
-        left = 0;
-        right = 0;
-        rightFlag = true;
+        num = 0;
 
-        while (right < N) {
-            if (rightFlag)
-                sum += inputs[right];
-            else
-                sum -= inputs[left - 1];
-
-            if (sum < M) {
-                right++;
-                rightFlag = true;
-            }
-            else if (sum == M) {
-                num++;
-                left++;
-                rightFlag = false;
-            } else {
-                left++;
-                rightFlag = false;
-            }
-        }
-
-        System.out.println(num);
+        twoPointer();
     }
 }

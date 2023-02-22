@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 public class Main {
 
     static int N;
-    static int[][] nums, maxDP, minDP;
+    static int[] maxDP, minDP, temp;
     static int max, min;
 
     public static void main(String[] args) throws IOException {
@@ -15,46 +15,55 @@ public class Main {
 
         N = Integer.parseInt(br.readLine());
 
-        // 양 옆에 여백을 만든다
-        nums = new int[N + 1][5];
-        maxDP = new int[N + 1][5];
-        minDP = new int[N + 1][5];
+        maxDP = new int[3];
+        minDP = new int[3];
+        temp = new int[3];
+
+        for (int i = 0; i < N; i++) {
+            StringTokenizer st = new StringTokenizer(br.readLine());
+
+            int num1 = Integer.parseInt(st.nextToken());
+            int num2 = Integer.parseInt(st.nextToken());
+            int num3 = Integer.parseInt(st.nextToken());
+
+            // 초기 값 설정
+            if (i == 0) {
+                maxDP[0] = num1;
+                maxDP[1] = num2;
+                maxDP[2] = num3;
+
+                minDP[0] = num1;
+                minDP[1] = num2;
+                minDP[2] = num3;
+
+                continue;
+            }
+
+            // 최댓값 DP 값을 구해서 임시 배열인 temp에 담고 나중에 한번에 옮긴다
+            temp[0] = num1 + Math.max(maxDP[0], maxDP[1]);
+            temp[1] = num2 + Math.max(maxDP[0], Math.max(maxDP[1], maxDP[2]));
+            temp[2] = num3 + Math.max(maxDP[1], maxDP[2]);
+
+            maxDP[0] = temp[0];
+            maxDP[1] = temp[1];
+            maxDP[2] = temp[2];
+
+            // 최솟값 DP 값을 구해서 임시 배열인 temp에 담고 나중에 한번에 옮긴다
+            temp[0] = num1 + Math.min(minDP[0], minDP[1]);
+            temp[1] = num2 + Math.min(minDP[0], Math.min(minDP[1], minDP[2]));
+            temp[2] = num3 + Math.min(minDP[1], minDP[2]);
+
+            minDP[0] = temp[0];
+            minDP[1] = temp[1];
+            minDP[2] = temp[2];
+        }
 
         max = Integer.MIN_VALUE;
         min = Integer.MAX_VALUE;
 
-        for (int i = 1; i <= N; i++) {
-            StringTokenizer st = new StringTokenizer(br.readLine());
-
-            for (int j = 1; j <= 3; j++) {
-                nums[i][j] = Integer.parseInt(st.nextToken());
-
-                // 양 옆의 여백을 인접한 원소로 채운다
-                if (j == 1)
-                    nums[i][0] = nums[i][j];
-                else if (j == 3)
-                    nums[i][4] = nums[i][j];
-            }
-
-            for (int j = 1; j <= 3; j++) {
-                maxDP[i][j] = Math.max(nums[i][j] + maxDP[i - 1][j - 1], Math.max(nums[i][j] + maxDP[i - 1][j], nums[i][j] + maxDP[i - 1][j + 1]));
-                minDP[i][j] = Math.min(nums[i][j] + minDP[i - 1][j - 1], Math.min(nums[i][j] + minDP[i - 1][j], nums[i][j] + minDP[i - 1][j + 1]));
-
-                // 양 옆의 여백을 인접한 원소로 채운다
-                if (j == 1) {
-                    maxDP[i][0] = maxDP[i][j];
-                    minDP[i][0] = minDP[i][j];
-                }
-                else if (j == 3) {
-                    maxDP[i][4] = maxDP[i][j];
-                    minDP[i][4] = minDP[i][j];
-                }
-            }
-        }
-
-        for (int i = 1; i <= 3; i++) {
-            max = Math.max(max, maxDP[N][i]);
-            min = Math.min(min, minDP[N][i]);
+        for (int i = 0; i < 3; i++) {
+            max = Math.max(max, maxDP[i]);
+            min = Math.min(min, minDP[i]);
         }
 
         System.out.println(max + " " + min);
