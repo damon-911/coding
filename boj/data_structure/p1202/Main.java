@@ -18,25 +18,13 @@ public class Main {
             this.price = price;
         }
 
-        public int getWeight() {
-            return weight;
-        }
-
         public int getPrice() {
             return price;
         }
 
         @Override
-        public String toString() {
-            return "Dia{" +
-                    "weight=" + weight +
-                    ", price=" + price +
-                    '}';
-        }
-
-        @Override
-        public int compareTo(Dia o) {
-            return weight - o.weight;
+        public int compareTo(Dia d) {
+            return weight - d.weight;
         }
     }
 
@@ -60,13 +48,13 @@ public class Main {
             bags[i] = Integer.parseInt(st.nextToken());
         }
 
+        // 보석 무게 오름차순 정렬
+        Arrays.sort(dias);
+
         // 가방 용량 오름차순 정렬
         Arrays.sort(bags);
 
-        // 보석 무게 순으로 정렬
-        Arrays.sort(dias);
-
-        // 보석 높은 값 기준 힙
+        // 가치가 높은 보석 기준 우선순위 큐
         PriorityQueue<Dia> pq = new PriorityQueue<>(Comparator.comparingInt(Dia::getPrice).reversed());
 
         int diaIndex = 0;
