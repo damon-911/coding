@@ -9,15 +9,13 @@ public class Main {
     static long[] nums;
     static long[] tree;
 
-    // start, end: 원래 배열의 시작, 끝 인덱스
-    // node: segment tree 의 주소
     static long init(int start, int end, int node) {
         if (start == end) {
             return tree[node] = nums[start];
         }
 
         int mid = (start + end) / 2;
-        // (node)번째 노드 합=왼쪽 자식(2*node) 합+오른쪽 자식(2*node+1) 합
+        // 왼쪽 자식(2 * node) 합 + 오른쪽 자식(2 * node + 1) 합
         return tree[node] = init(start, mid, node * 2) + init(mid + 1, end, node * 2 + 1);
     }
 

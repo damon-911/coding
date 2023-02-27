@@ -2,21 +2,27 @@ package boj.data_structure;
 
 public class IndexedTree {
 
-    static int N, M, K;
+    static int N, S;
     static long[] nums;
     static long[] tree;
-    static int S;
 
-    static void init() {
-        // 자식 노드는 데이터로 채움
-        for (int i = 0; i < N; i++) {
-            tree[S + i] = nums[i];
+    static long init(int left, int right, int node) {
+        // 리프 노드일 경우
+        if (left == right) {
+            if (left <= N)
+                tree[node] = nums[left];
+            else
+                tree[node] = 0;
+        }
+        // 내부 노드일 경우
+        else {
+            int mid = (left + right) / 2;
+            long leftResult = init(left, mid, node * 2);
+            long rightResult = init(mid + 1, right, node * 2 + 1);
+            tree[node] = leftResult + rightResult;
         }
 
-        // 내부 노드는 자식의 합으로 채움
-        for (int i = S - 1; i >= 0; i--) {
-            tree[i] = tree[i * 2] + tree[i * 2 + 1];
-        }
+        return tree[node];
     }
 
     static long query(int left, int right, int node, int queryLeft, int queryRight) {
@@ -52,6 +58,18 @@ public class IndexedTree {
         }
     }
 
+    static void initBU() {
+        // 자식 노드는 데이터로 채움
+        for (int i = 0; i < N; i++) {
+            tree[S + i] = nums[i];
+        }
+
+        // 내부 노드는 자식의 합으로 채움
+        for (int i = S - 1; i >= 0; i--) {
+            tree[i] = tree[i * 2] + tree[i * 2 + 1];
+        }
+    }
+
     static long queryBU(int queryLeft, int queryRight) {
         long sum = 0;
         int left = S + queryLeft - 1;
@@ -84,8 +102,8 @@ public class IndexedTree {
     }
 
     public static void main(String[] args) {
-        N = 5;
-        nums = new long[] { 1, 2, 3, 4, 5 };
+        N = 8;
+        nums = new long[] { 0, 3, 2, 4, 5, 1, 6, 2, 7 };
 
         S = 1;
         while (S < N) {
@@ -93,5 +111,8 @@ public class IndexedTree {
         }
 
         tree = new long[S * 2];
+
+        long answer = init(1, S, 1);
+        System.out.println(answer);
     }
 }
