@@ -21,6 +21,28 @@ public class Main {
     static StringBuilder sb = new StringBuilder();
     static TrieNode root = new TrieNode();
 
+    static class TrieNode {
+        TrieNode[] child = new TrieNode[26];
+        boolean isEnd;
+        boolean isHit;
+
+        boolean hasChild(char c) {
+            return child[c - 'A'] != null;
+        }
+
+        TrieNode getChild(char c) {
+            return child[c - 'A'];
+        }
+
+        void clearHit() {
+            this.isHit = false;
+            for (TrieNode trieNode : child) {
+                if (trieNode != null)
+                    trieNode.clearHit();
+            }
+        }
+    }
+
     static void search(int y, int x, TrieNode node) {
         // 1. 체크인
         visited[y][x] = true;
@@ -128,28 +150,6 @@ public class Main {
 
             if (count != B - 1)
                 br.readLine();
-        }
-    }
-}
-
-class TrieNode {
-    TrieNode[] child = new TrieNode[26];
-    boolean isEnd;
-    boolean isHit;
-
-    boolean hasChild(char c) {
-        return child[c - 'A'] != null;
-    }
-
-    TrieNode getChild(char c) {
-        return child[c - 'A'];
-    }
-
-    void clearHit() {
-        this.isHit = false;
-        for (TrieNode trieNode : child) {
-            if (trieNode != null)
-                trieNode.clearHit();
         }
     }
 }

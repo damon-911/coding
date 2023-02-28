@@ -54,10 +54,12 @@ public class Main {
                 int leftNode = currentNode * 2;
                 int rightNode = currentNode * 2 + 1;
 
+                // 현재 데이터 size를 넘어가면 break
                 if (leftNode >= list.size()) {
                     break;
                 }
 
+                // 왼쪽 자식과 오른쪽 자식 중 더 큰 것을 찾는 과정
                 int targetNode = leftNode;
                 int targetValue = list.get(leftNode);
 
@@ -66,6 +68,7 @@ public class Main {
                     targetValue = list.get(rightNode);
                 }
 
+                // 비교 후 조건에 맞게 swap
                 if (list.get(currentNode) < targetValue) {
                     int temp = list.get(currentNode);
                     list.set(currentNode, list.get(targetNode));

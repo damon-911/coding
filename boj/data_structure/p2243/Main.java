@@ -57,18 +57,18 @@ public class Main {
 
         for (int i = 0; i < N; i++) {
             st = new StringTokenizer(br.readLine());
-            int flag = Integer.parseInt(st.nextToken());
+            int A = Integer.parseInt(st.nextToken());
 
-            if (flag == 1) {
-                long target = Integer.parseInt(st.nextToken());
-                int answer = query(1, max, 1, target);  // 꺼낸 사탕의 종류
-                System.out.println(answer);
-                update(1, max, 1, answer, -1);
+            if (A == 1) {
+                long B = Integer.parseInt(st.nextToken());
+                int taste = query(1, max, 1, B);    // 꺼낸 사탕의 종류
+                System.out.println(taste);
+                update(1, max, 1, taste, -1);   // 해당 사탕 하나 꺼냄
             }
             else {
-                int taste = Integer.parseInt(st.nextToken());
-                int num = Integer.parseInt(st.nextToken());
-                update(1, max, 1, taste, num);
+                int B = Integer.parseInt(st.nextToken());
+                int C = Integer.parseInt(st.nextToken());
+                update(1, max, 1, B, C);
             }
         }
     }
