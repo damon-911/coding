@@ -9,15 +9,13 @@ public class Main {
     static int[] nums;
     static int[] LtoR, RtoL;
 
+    // 최대공약수 구하는 함수
     static int gcd(int a, int b) {
-        // gcd(a, b) = gcd(b, a % b) (a % b == 0일 때의 b가 최대공약수이다)
-        while (b != 0) {
-            int r = a % b;
-            a = b;
-            b = r;
+        if (a % b == 0) {
+            return b;
         }
 
-        return a;
+        return gcd(b, a % b);
     }
 
     public static void main(String[] args) throws IOException {
@@ -60,6 +58,7 @@ public class Main {
                 except = nums[i];
             }
         }
+
         if (answer == 0)
             System.out.println(-1);
         else
