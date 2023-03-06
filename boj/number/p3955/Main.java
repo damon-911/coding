@@ -8,49 +8,40 @@ public class Main {
     static int T;
     static long A, B;
 
-    static class EGResult {
+    static class EGCDResult {
         long s;
         long t;
         long r;
 
-        public EGResult(long s, long t, long r) {
+        public EGCDResult(long s, long t, long r) {
             this.s = s;
             this.t = t;
             this.r = r;
         }
-
-        @Override
-        public String toString() {
-            return "EGResult{" +
-                    "s=" + s +
-                    ", t=" + t +
-                    ", r=" + r +
-                    '}';
-        }
     }
 
-    static EGResult egcd(long a, long b) {
+    static EGCDResult egcd(long a, long b) {
         long s0 = 1; long t0 = 0; long r0 = a;
         long s1 = 0; long t1 = 1; long r1 = b;
-
         long temp;
+
         while (r1 != 0) {
             long q = r0 / r1;
 
-            temp = r0 - q * r1;  // r0 % r1
+            temp = r0 - q * r1; // r0 % r1
             r0 = r1;
             r1 = temp;
 
-            temp = s0 - q * s1;
+            temp = s0 - q * s1; // s0 % s1
             s0 = s1;
             s1 = temp;
 
-            temp = t0 - q * t1;
+            temp = t0 - q * t1; // t0 % t1
             t0 = t1;
             t1 = temp;
         }
 
-        return new EGResult(s0, t0, r0);
+        return new EGCDResult(s0, t0, r0);
     }
 
     public static void main(String[] args) throws IOException {
@@ -68,9 +59,9 @@ public class Main {
             // X : 인당 나눠줄 사탕의 수
             // Y : 사탕 봉지의 수
             // A * X + 1 = B * Y
-            // Ax + By = C 의 형태로 변환
+            // Ax + By = C 의 베주 항등식 형태로 변환
             // A(-x) + By = 1 (추후 k를 구할 때 x의 범위가 반전된다)
-            EGResult result = egcd(A, B);
+            EGCDResult result = egcd(A, B);
 
             // Ax + By = C 일 때 C % gcd(A, B) == 0 이어야 해를 가질 수 있다 : 베주 항등식
             if (result.r != 1)
