@@ -1,9 +1,6 @@
 package boj.combinatoric.p1256;
 
-import java.io.BufferedReader;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStreamReader;
+import java.io.*;
 import java.util.StringTokenizer;
 
 public class Main {
@@ -36,12 +33,15 @@ public class Main {
             query(n - 1, m, k);
         }
         else {
+            // limit : 해당 자리를 제외한 나머지 자리에 올 수 있는 경우의 수
             int limit = combination(n + m - 1, m);
             if (limit >= k) {
+                // 이제 문자열에는 (n - 1)개의 'a'가 필요함
                 answer.append("a");
                 query(n - 1, m, k);
             }
             else {
+                // 이제 문자열에는 (m - 1)개의 'z'가 필요하고 limit 뒤에서부터 순서를 찾아야 함
                 answer.append("z");
                 query(n, m - 1, k - limit);
             }
