@@ -1,4 +1,4 @@
-package boj.combinatoric.p1010;
+package boj.combinatorics.p1010;
 
 import java.io.*;
 import java.util.StringTokenizer;
@@ -20,7 +20,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        System.setIn(new FileInputStream("boj/combinatoric/p1010/input.txt"));
+        System.setIn(new FileInputStream("boj/combinatorics/p1010/input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
