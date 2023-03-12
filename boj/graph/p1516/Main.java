@@ -15,19 +15,19 @@ public class Main {
 
     static class Build {
         int time;
-        ArrayList<Integer> pred;
+        ArrayList<Integer> successor;
 
-        public Build(int time, ArrayList<Integer> pred) {
+        public Build(int time, ArrayList<Integer> successor) {
             this.time = time;
-            this.pred = pred;
+            this.successor = successor;
         }
 
         public void setTime(int time) {
             this.time = time;
         }
 
-        public ArrayList<Integer> getPred() {
-            return pred;
+        public ArrayList<Integer> getSuccessor() {
+            return successor;
         }
     }
 
@@ -35,8 +35,8 @@ public class Main {
         while (!queue.isEmpty()) {
             Build build = queue.poll();
 
-            for (int i = 0; i < build.pred.size(); i++) {
-                int dest = build.pred.get(i);
+            for (int i = 0; i < build.successor.size(); i++) {
+                int dest = build.successor.get(i);
 
                 // dest 건물을 짓는 데 걸리는 최소 시간 < dest 건물 짓는데 필요한 시간 + 현재까지 건물 짓는데 걸린 시간
                 if (minTime[dest] < buildings[dest].time + build.time) {
@@ -82,7 +82,7 @@ public class Main {
             int temp;
             while ((temp = Integer.parseInt(st.nextToken())) != -1) {
                 // temp를 선행자로 가지는 건물 번호를 저장한다.
-                buildings[temp].getPred().add(i);
+                buildings[temp].getSuccessor().add(i);
                 inDegree[i]++;
             }
 
