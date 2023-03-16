@@ -8,22 +8,24 @@ public class Main {
     static int N, M;
     static int[] parent;
 
-    static int find(int element) {
-        if (parent[element] == element)
-            return element;
-        else {
-            return parent[element] = find(parent[element]);
-        }
-    }
-
-    static void union(int element1, int element2) {
+    static void union(int a, int b) {
         // element1과 element2의 대표 노드 확인
-        int root1 = find(element1);
-        int root2 = find(element2);
+        int root1 = find(a);
+        int root2 = find(b);
 
         // element1과 element2의 대표 노드가 다를 경우
         if (root1 != root2)
             parent[root1] = root2;
+    }
+
+    static int find(int a) {
+        // 찾는 대상과 인덱스 번호가 같다면 그 인덱스가 해당 집합의 부모이다
+        if (parent[a] == a)
+            return a;
+        else {
+            // 해당 인덱스가 가리키는 값(부모 노드)을 따라 최종 부모 노드까지 탐색
+            return parent[a] = find(parent[a]);
+        }
     }
 
     public static void main(String[] args) throws IOException {
@@ -43,16 +45,15 @@ public class Main {
             st = new StringTokenizer(br.readLine());
 
             int flag = Integer.parseInt(st.nextToken());
-            int element1 = Integer.parseInt(st.nextToken());
-            int element2 = Integer.parseInt(st.nextToken());
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
 
             if (flag == 0) {
-                union(element1, element2);
+                union(a, b);
             }
             else if (flag == 1) {
-                if (find(element1) == find(element2)) {
+                if (find(a) == find(b))
                     System.out.println("YES");
-                }
                 else
                     System.out.println("NO");
             }
