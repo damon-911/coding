@@ -6,10 +6,8 @@ import java.util.*;
 public class Main {
 
     static int N, M;
-    static int a, b, c;
     static int[] computers;
     static PriorityQueue<Edge> pq;
-    static int minCost;
 
     static class Edge implements Comparable<Edge> {
         int current;
@@ -20,10 +18,6 @@ public class Main {
             this.current = current;
             this.dest = dest;
             this.cost = cost;
-        }
-
-        public int getCost() {
-            return cost;
         }
 
         @Override
@@ -51,6 +45,8 @@ public class Main {
     }
 
     static void kruskal() {
+        int minCost = 0;
+
         while (!pq.isEmpty()) {
             Edge edge = pq.poll();
             if (find(edge.current) != find(edge.dest)) {
@@ -77,15 +73,13 @@ public class Main {
             computers[num] = num;
         }
 
-        pq = new PriorityQueue<>(Comparator.comparingInt(Edge::getCost));
-
-        minCost = 0;
+        pq = new PriorityQueue<>();
 
         for (int i = 0; i < M; i++) {
             st = new StringTokenizer(br.readLine());
-            a = Integer.parseInt(st.nextToken());
-            b = Integer.parseInt(st.nextToken());
-            c = Integer.parseInt(st.nextToken());
+            int a = Integer.parseInt(st.nextToken());
+            int b = Integer.parseInt(st.nextToken());
+            int c = Integer.parseInt(st.nextToken());
 
             pq.offer(new Edge(a, b, c));
         }
