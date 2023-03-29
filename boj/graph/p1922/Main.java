@@ -50,7 +50,7 @@ public class Main {
             computers[root1] = root2;
     }
 
-    static void connect() {
+    static void kruskal() {
         while (!pq.isEmpty()) {
             Edge edge = pq.poll();
             if (find(edge.current) != find(edge.dest)) {
@@ -90,6 +90,6 @@ public class Main {
             pq.offer(new Edge(a, b, c));
         }
 
-        connect();
+        kruskal();
     }
 }
