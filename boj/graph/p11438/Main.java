@@ -2,12 +2,13 @@ package boj.graph.p11438;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.StringTokenizer;
 
 public class Main {
 
     static int N, M;
-    static ArrayList<ArrayList<Integer>> adjList;
+    static List<List<Integer>> adjList;
     static int[][] parent;
     static boolean[] check;
     static int[] depth;
@@ -26,7 +27,6 @@ public class Main {
             if (!check[dest]) {
                 // dest 점의 직계조상은 cur이다
                 parent[0][dest] = cur;
-
                 // DFS 진행
                 getDepth(dest, dep + 1);
             }
@@ -67,7 +67,7 @@ public class Main {
             if (dep_a - (int) Math.pow(2, i) >= dep_b) {
                 // depth 조절
                 dep_a -= (int) Math.pow(2, i);
-                // a의 j번째 조상
+                // a의 i번째 조상
                 a = parent[i][a];
 
                 if (dep_a == dep_b)
@@ -78,9 +78,6 @@ public class Main {
         int answer = a;
 
         // 두 a, b를 같이 올리는 과정
-        // depth를 7이라고 가정
-        // a != b, dep_a = 7, dep_b = 7
-        // 2^3 = 8
         if (a != b) {
             for (int i = 17; i >= 0; i--) {
                 if (parent[i][a] != parent[i][b]) {
@@ -113,24 +110,17 @@ public class Main {
             adjList.add(new ArrayList<>());
         }
 
-        for (int i = 0; i < N - 1; i++) {
+        for (int i = 1; i < N; i++) {
             st = new StringTokenizer(br.readLine());
             int v1 = Integer.parseInt(st.nextToken());
             int v2 = Integer.parseInt(st.nextToken());
+
             adjList.get(v1).add(v2);
             adjList.get(v2).add(v1);
         }
         
         // depth를 구하는 탐색
         getDepth(1, 0);
-
-//        // 필요한 parent 크기 구할 때
-//        int count = 0;
-//        int num = 1;
-//        while (num < N) {
-//            num *= 2;
-//            count++;
-//        }
 
         // 2^17까지 조상을 구해놓는다면 배열 값이 부족할 일이 없음 (2^17 > N = 100,000)
         for (int i = 1; i <= 17; i++) {
