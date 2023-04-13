@@ -53,7 +53,6 @@ public class Main {
         if (root == 0 && childNodeCnt > 1) {
             if (!isCutPoint[curNode])
                 cutPointCnt++;
-
             isCutPoint[curNode] = true;
         }
 
