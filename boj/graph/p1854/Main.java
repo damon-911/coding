@@ -44,17 +44,7 @@ public class Main {
                     pq.offer(new Road(nextRD, nextRT + RT));
                 }
                 else {
-                    // pathPQ[끝점과 인접한 점] 하나를 빼면
-                    // nextRT + RT -> 현재 계산한 최단경로의 소요시간
-                    // peek라는 건 priorty queue의 제일 최상위 노드를 가져옴
-                    // 최소힙이라면(오름차순 priority queue) 최소값
-                    // 최대힙이라면(내림차순 priority queue) 최대값
-                    // 오름차순으로 만들어 놓으면
-                    // K = 2
-                    // 7 priority queue > 7
-                    // 9 priority queue > 9 7 >> 2번째 최단경로를 9을 만들어 놓았는데
-                    // 8 priority queue > 8 7 >> 9를 제거하고 8로 갱신하여 준다
-                    // K번째 최단 경로는 항상 pathPQ.get(nextRD)의 top으로 유지가 된다
+                    // K번째 최단 경로는 항상 pathPQ.get(nextRD)의 top으로 유지되어 있다
                     if (pathPQ.get(nextRD).peek() > nextRT + RT) {
                         // pathPQ의 제일 윗값 (max 값을 제거)
                         pathPQ.get(nextRD).poll();
@@ -101,7 +91,6 @@ public class Main {
         }
 
         pq = new PriorityQueue<>();
-
         pq.offer(new Road(1, 0));
         pathPQ.get(1).offer(0);
 

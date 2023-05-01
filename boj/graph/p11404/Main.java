@@ -39,7 +39,7 @@ public class Main {
                 costs[A][B] = C;
         }
 
-        // for 문을 3번 돌려서 모든 정점에서 모든 정점으로 가는 최단거리를 구한다 (전체 쌍 최단 경로)
+        // for 문을 3번 돌려서 모든 도시 쌍들 사이의 최소 비용을 구한다 (전체 쌍 최단 경로)
         for (int k = 1; k <= N; k++) {
             for (int i = 1; i <= N; i++) {
                 for (int j = 1; j <= N; j++) {
