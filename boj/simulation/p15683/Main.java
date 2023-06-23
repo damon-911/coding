@@ -1,4 +1,4 @@
-package boj.bfs.p15683;
+package boj.simulation.p15683;
 
 import java.io.*;
 import java.util.*;
@@ -27,7 +27,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        System.setIn(new FileInputStream("boj/bfs/p15683/input.txt"));
+        System.setIn(new FileInputStream("boj/simulation/p15683/input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         StringTokenizer st = new StringTokenizer(br.readLine());
