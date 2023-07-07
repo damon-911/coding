@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71885/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/42576
+
 ### 문제 설명
 
 수많은 마라톤 선수들이 마라톤에 참여하였습니다. 단 한 명의 선수를 제외하고는 모든 선수가 마라톤을 완주하였습니다.
