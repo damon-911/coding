@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71890/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/12909
+
 ### 문제 설명
 
 괄호가 바르게 짝지어졌다는 것은 '(' 문자로 열렸으면 반드시 짝지어서 ')' 문자로 닫혀야 한다는 뜻입니다. 예를 들어

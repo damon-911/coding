@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71894/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/42583
+
 ### 문제 설명
 
 트럭 여러 대가 강을 가로지르는 일차선 다리를 정해진 순으로 건너려 합니다.
