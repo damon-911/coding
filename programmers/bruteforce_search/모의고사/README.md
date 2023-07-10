@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71865/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/42840
+
 ### 문제 설명
 
 수포자는 수학을 포기한 사람의 준말입니다. 수포자 삼인방은 모의고사에 수학 문제를 전부 찍으려 합니다. 수포자는 1번 문제부터 마지막 문제까지 다음과 같이 찍습니다.

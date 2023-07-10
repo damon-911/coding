@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71868/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/42839
+
 ### 문제 설명
 
 한자리 숫자가 적힌 종이 조각이 흩어져있습니다. 흩어진 종이 조각을 붙여 소수를 몇 개 만들 수 있는지 알아내려 합니다.
