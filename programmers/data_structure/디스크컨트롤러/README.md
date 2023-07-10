@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71899/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/42627
+
 ### 문제 설명
 
 하드디스크는 한 번에 하나의 작업만 수행할 수 있습니다. 디스크 컨트롤러를 구현하는 방법은 여러 가지가 있습니다.

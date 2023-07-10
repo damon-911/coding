@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71898/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/42628
+
 ### 문제 설명
 
 이중 우선순위 큐는 다음 연산을 할 수 있는 자료구조를 말합니다.
