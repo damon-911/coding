@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71913/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/42884
+
 ### 문제 설명
 
 고속도로를 이동하는 모든 차량이 고속도로를 이용하면서 단속용 카메라를 한 번은 만나도록 카메라를 설치하려고 합니다.
