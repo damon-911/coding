@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71887/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/43105
+
 ### 문제 설명
 
 ![](https://grepp-programmers.s3.amazonaws.com/files/production/97ec02cc39/296a0863-a418-431d-9e8c-e57f7a9722ac.png)

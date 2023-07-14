@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71889/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/1843
+
 ### 문제 설명
 
 사칙연산에서 더하기(+)는 결합법칙이 성립하지만, 빼기(-)는 결합법칙이 성립하지 않습니다.
