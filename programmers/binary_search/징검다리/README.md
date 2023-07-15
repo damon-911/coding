@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71879/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/43236
+
 ### 문제 설명
 
 출발지점부터 distance만큼 떨어진 곳에 도착지점이 있습니다. 그리고 그사이에는 바위들이 놓여있습니다. 바위 중 몇 개를 제거하려고 합니다.

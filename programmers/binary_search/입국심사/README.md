@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71878/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/43238
+
 ### 문제 설명
 
 n명이 입국심사를 위해 줄을 서서 기다리고 있습니다. 각 입국심사대에 있는 심사관마다 심사하는데 걸리는 시간은 다릅니다.
