@@ -1,4 +1,4 @@
-package programmers.simulation.단속카메라;
+package programmers.greedy.단속카메라;
 
 import java.util.Arrays;
 import java.util.Comparator;

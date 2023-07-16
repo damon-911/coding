@@ -1,4 +1,4 @@
-package programmers.simulation.큰수만들기;
+package programmers.greedy.큰수만들기;
 
 public class Solution {
 

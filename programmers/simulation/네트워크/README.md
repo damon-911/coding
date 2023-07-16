@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/718908/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/43162
+
 ### 문제 설명
 
 네트워크란 컴퓨터 상호 간에 정보를 교환할 수 있도록 연결된 형태를 의미합니다.

@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/718907/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/43165
+
 ### 문제 설명
 
 n개의 음이 아닌 정수들이 있습니다. 이 정수들을 순서를 바꾸지 않고 적절히 더하거나 빼서 타겟 넘버를 만들려고 합니다.
