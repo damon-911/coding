@@ -1,4 +1,4 @@
-package programmers.simulation.섬연결하기;
+package programmers.greedy.섬연결하기;
 
 import java.util.ArrayList;
 import java.util.List;

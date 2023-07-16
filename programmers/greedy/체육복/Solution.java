@@ -1,4 +1,4 @@
-package programmers.simulation.체육복;
+package programmers.greedy.체육복;
 
 import java.util.Arrays;
 

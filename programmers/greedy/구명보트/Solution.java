@@ -1,4 +1,4 @@
-package programmers.simulation.구명보트;
+package programmers.greedy.구명보트;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package programmers.simulation.조이스틱;
+package programmers.greedy.조이스틱;
 
 public class Solution {
 
