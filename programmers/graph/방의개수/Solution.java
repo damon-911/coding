@@ -1,4 +1,4 @@
-package programmers.data_structure.방의개수;
+package programmers.graph.방의개수;
 
 import java.util.ArrayList;
 import java.util.HashMap;

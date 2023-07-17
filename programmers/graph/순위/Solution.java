@@ -1,17 +1,15 @@
-package programmers.data_structure.순위;
+package programmers.graph.순위;
 
 public class Solution {
 
     public static int solution(int n, int[][] results) {
         int answer = 0;
+
         int[][] floyd = new int[n + 1][n + 1];
 
-        for (int i = 0; i < results.length; i++) {
-            int A = results[i][0];
-            int B = results[i][1];
-
-            floyd[A][B] = 1;
-            floyd[B][A] = -1;
+        for (int[] result : results) {
+            floyd[result[0]][result[1]] = 1;
+            floyd[result[1]][result[0]] = -1;
         }
 
         for (int i = 1; i <= n; i++) {
@@ -37,6 +35,7 @@ public class Solution {
                     cnt++;
             }
 
+            // n명의 선수가 있을 때, n-1번의 승패를 알아야 순위를 확정 지을 수 있다
             if (cnt == n - 1)
                 answer++;
         }

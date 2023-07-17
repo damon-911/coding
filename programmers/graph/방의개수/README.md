@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71896/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/49190
+
 ### 문제 설명
 
 원점(0,0)에서 시작해서 아래처럼 숫자가 적힌 방향으로 이동하며 선을 긋습니다.
