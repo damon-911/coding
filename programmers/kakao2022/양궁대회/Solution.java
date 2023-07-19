@@ -1,4 +1,4 @@
-package programmers.kakao.양궁대회;
+package programmers.kakao2022.양궁대회;
 
 import java.util.Arrays;
 

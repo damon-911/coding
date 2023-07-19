@@ -1,4 +1,4 @@
-package programmers.kakao.개인정보수집유효기간;
+package programmers.kakao2023.개인정보수집유효기간;
 
 import java.util.ArrayList;
 import java.util.Arrays;

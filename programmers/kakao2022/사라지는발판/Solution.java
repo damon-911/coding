@@ -1,4 +1,4 @@
-package programmers.kakao.사라지는발판;
+package programmers.kakao2022.사라지는발판;
 
 public class Solution {
 

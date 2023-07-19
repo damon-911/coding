@@ -1,4 +1,4 @@
-package programmers.kakao.주차요금계산;
+package programmers.kakao2022.주차요금계산;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,4 +1,4 @@
-package programmers.kakao.신고결과받기;
+package programmers.kakao2022.신고결과받기;
 
 import java.util.Arrays;
 import java.util.HashMap;

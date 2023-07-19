@@ -1,4 +1,4 @@
-package programmers.kakao.k진수에서소수개수구하기;
+package programmers.kakao2022.k진수에서소수개수구하기;
 
 public class Solution {
 

@@ -1,4 +1,4 @@
-package programmers.kakao.양과늑대;
+package programmers.kakao2022.양과늑대;
 
 import java.util.ArrayList;
 import java.util.List;

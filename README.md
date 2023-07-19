@@ -27,5 +27,6 @@
 -   [그래프](https://github.com/damon-911/coding/tree/master/programmers/graph)
 -   [그리디](https://github.com/damon-911/coding/tree/master/programmers/greedy)
 -   [구현](https://github.com/damon-911/coding/tree/master/programmers/simulation)
--   [카카오 2022 블라인드 테스트](https://github.com/damon-911/coding/tree/master/programmers/kakao)
+-   [카카오 2022 블라인드 테스트](https://github.com/damon-911/coding/tree/master/programmers/kakao2022)
+-   [카카오 2023 블라인드 테스트](https://github.com/damon-911/coding/tree/master/programmers/kakao2023)
 -   [PCCP 모의고사](https://github.com/damon-911/coding/tree/master/programmers/pccp)

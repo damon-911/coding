@@ -1,4 +1,4 @@
-package programmers.kakao.파괴되지않은건물;
+package programmers.kakao2022.파괴되지않은건물;
 
 public class Solution {
 

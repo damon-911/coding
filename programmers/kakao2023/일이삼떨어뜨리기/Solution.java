@@ -1,4 +1,4 @@
-package programmers.kakao.일이삼떨어뜨리기;
+package programmers.kakao2023.일이삼떨어뜨리기;
 
 import java.util.ArrayList;
 import java.util.Arrays;
