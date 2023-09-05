@@ -40,7 +40,7 @@
 
 ### 입출력 예
 
-| str1          | return          | return  |
+| str1          | str2            | return  |
 | :------------ | :-------------- | :------ |
 | `"FRANCE"`    | `"french"`      | `16384` |
 | `"handshake"` | `"shake hands"` | `65536` |
