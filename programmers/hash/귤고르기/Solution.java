@@ -5,14 +5,14 @@ import java.util.Comparator;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeMap;
+import java.util.HashMap;
 
 public class Solution {
 
     public static int solution(int k, int[] tangerine) {
         int answer = 0;
 
-        Map<Integer, Integer> map = new TreeMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
 
         for (int t : tangerine) {
             map.put(t, map.getOrDefault(t, 0) + 1);
