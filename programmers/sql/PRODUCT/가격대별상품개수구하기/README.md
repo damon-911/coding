@@ -1,6 +1,6 @@
 # 가격대 별 상품 개수 구하기
 
-### https://school.programmers.co.kr/learn/courses/30/lessons/13130
+### https://school.programmers.co.kr/learn/courses/30/lessons/131530
 
 ### 문제 설명
 
