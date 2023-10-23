@@ -2,6 +2,8 @@
 
 ### https://school.programmers.co.kr/tryouts/71897/challenges
 
+### https://school.programmers.co.kr/learn/courses/30/lessons/42892
+
 ### 문제 설명
 
 전무로 승진한 라이언은 기분이 너무 좋아 프렌즈를 이끌고 특별 휴가를 가기로 했다.
