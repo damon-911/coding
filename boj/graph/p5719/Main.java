@@ -29,7 +29,6 @@ public class Main {
         while (!pq.isEmpty()) {
             Road road = pq.poll();
             int RD = road.dest;
-            int RL = road.length;
 
             // 현재 우선순위 큐에서 뺀 것과 기존 계산된 최단거리랑 비교했을 때
             // 우선순위 큐에서 뺀 것이 더 큰 거리라면 continue;
