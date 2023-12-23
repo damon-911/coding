@@ -38,7 +38,6 @@ public class Main {
 
                 if (box[tx][ty] == 0) {
                     box[tx][ty] = box[temp[0]][temp[1]] + 1;
-                    ;
                     queue.offer(new int[] { tx, ty });
                 }
             }
