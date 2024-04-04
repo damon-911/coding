@@ -1,4 +1,4 @@
-package boj.dfs.p21277;
+package boj.simulation.p21277;
 
 import java.io.*;
 import java.util.StringTokenizer;
@@ -61,7 +61,7 @@ public class Main {
     }
 
     public static void main(String[] args) throws IOException {
-        System.setIn(new FileInputStream("boj/dfs/p21277/input.txt"));
+        System.setIn(new FileInputStream("boj/simulation/p21277/input.txt"));
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         // 퍼즐 1
