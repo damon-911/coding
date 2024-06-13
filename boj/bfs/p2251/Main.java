@@ -38,7 +38,9 @@ public class Main {
             int[] cur = queue.poll();
 
             if (cur[0] == 0) {
-                result.add(cur[2]);
+                if (!result.contains(cur[2])) {
+                    result.add(cur[2]);
+                }
             }
 
             for (int i = 0; i < 3; i++) {
